@@ -1,0 +1,32 @@
+<Styles xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AvaloniaDock;assembly=AvaloniaDock">
+  <Style Selector="local|DockTarget">
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                   <Grid Name="grid" IsVisible="{Binding #grid.TemplatedParent.IsVisible, Mode=TwoWay}"
+                         RowDefinitions="0.3*,*,0.3*" ColumnDefinitions="0.3*,*,0.3*">
+                     <Grid Background="Red"  ColumnSpan="3" Opacity="0" Name="PART_TopIndicator" />
+                     <Grid Background="Blue"  Grid.Row="2" ColumnSpan="3" Opacity="0" Name="PART_BottomIndicator" />
+                     <Grid Background="Green" RowSpan="3" Opacity="0" Name="PART_LeftIndicator" />
+                     <Grid Background="Orange" Grid.Column="2" RowSpan="3" Opacity="0" Name="PART_RightIndicator"/>
+                     <Grid Background="Purple" ColumnSpan="3" RowSpan="3" Opacity="0" Name="PART_CenterIndicator"/>
+                     <Grid RowSpan="3" ColumnSpan="3">
+                       <DockPanel LastChildFill="True" MaxWidth="100" MaxHeight="100">
+                         <Button Name="PART_TopSelector" Content="^" DockPanel.Dock="Top" BorderThickness="1" BorderBrush="Black" Height="40" Width="40" />
+                         <Button Name="PART_BottomSelector" Content="V" DockPanel.Dock="Bottom" BorderThickness="1" BorderBrush="Black" Height="40" Width="40" />
+                         <Button Name="PART_LeftSelector" Content="[" DockPanel.Dock="Left" BorderThickness="1" BorderBrush="Black" Height="40" Width="40" />
+                         <Button Name="PART_RightSelector" Content=">" DockPanel.Dock="Right" BorderThickness="1" BorderBrush="Black" Height="40" Width="40" />
+                         <Button Name="PART_CenterSelector" Content="*" Height="40" Width="40" Margin="5" BorderThickness="1" BorderBrush="Black" />
+                       </DockPanel>
+                     </Grid>
+                   </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+</Styles>

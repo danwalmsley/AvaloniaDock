@@ -1,0 +1,14 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:AvaloniaDock.ViewModels;assembly=AvaloniaDock"
+        xmlns:local="clr-namespace:AvaloniaDock;assembly=AvaloniaDock"
+        Icon="resm:AvaloniaDock.Assets.avalonia-logo.ico"
+        Title="AvaloniaDock">
+
+  <Design.DataContext>
+    <vm:MainWindowViewModel/>
+  </Design.DataContext>
+
+<local:DockTarget MinWidth="200" MinHeight="200" Background="SkyBlue" />
+
+</Window>
